@@ -54,16 +54,16 @@
 <h4>
 <a name="play" class="anchor" href="#play"><span class="octicon octicon-link"></span></a>Play</h4>
 
-<p>For play projects, it will default to sbt clean compile stage -Dsbt.log.noformat=true (the noformat prevents the control characters from outputting and making the logs hard to read)</p>
+<p>For play projects, the build step default to <code>sbt clean compile stage -Dsbt.log.noformat=true</code> (note: the noformat prevents the control characters from outputting and making the logs hard to read)</p>
 
-<p>You can override these settings on your server's configuration page, you are responsible for making sure your application is packaged to deploy in the  target/universal/stage/ folder after execution</p>
+<p>You can override these settings on your server's configuration page, however you'll need to make sure sure your application is packaged to deploy in the  target/universal/stage/ folder after execution</p>
 
 <h4>
 <a name="mavenwar-projects" class="anchor" href="#mavenwar-projects"><span class="octicon octicon-link"></span></a>Maven/War Projects</h4>
 
-<p>For maven projects, it will default to mvn clean package. </p>
+<p>For maven projects, the build step will default to <code>mvn clean package</code>. </p>
 
-<p>You can override these settings on your server's configuration page, you are responsible to making sure a .war file is packaged in the projects target/ folder after execution.</p>
+<p>You can override these settings on your server's configuration page, however you'll need to make sure a .war file is packaged in the projects target/ folder after execution.</p>
 
 <h3>
 <a name="deploy" class="anchor" href="#deploy"><span class="octicon octicon-link"></span></a>Deploy</h3>
