@@ -107,20 +107,20 @@
 
 <p>If there a Redis or Memcache servers in a network their IP addresses are published as environment variables to all members of the network.</p>
 
-<ol>
+<ul>
 <li>NET_REDIS_SERVERS=ipAddress1,ipAddress2</li>
 <li>NET_MEMCACHE_SERVERS=ipAddress1,ipAddress2</li>
-</ol><h3>
+</ul><h3>
 <a name="network-database" class="anchor" href="#network-database"><span class="octicon octicon-link"></span></a>Network Database</h3>
 
 <p>Rapidcloud allows you to select one of the MySQL instances on a network as the network DB. Once this is done, the database connection information will be published to all members of the network as environment variables.</p>
 
-<ol>
+<ul>
 <li>NET_DB_NAME=name</li>
 <li>NET_DB_USER=login username</li>
 <li>NET_DB_PASSWORD=login password</li>
 <li>NET_DB_URL=jdbc url to the database</li>
-</ol><h1>
+</ul><h1>
 <a name="server-setup" class="anchor" href="#server-setup"><span class="octicon octicon-link"></span></a>Server Setup</h1>
 
 <h3>
@@ -129,9 +129,12 @@
 <p>Tomcat is located in
 <code>/opt/tomcat/</code></p>
 
-<p>It is separated into a home and base for each instance.
-<code>CATALINA_HOME=/opt/tomcat</code>
-<code>CATALINA_BASE=/opt/tomcat/instances/(8080|8081)</code></p>
+<p>It is separated into a home and base for each instance.</p>
+
+<ul>
+<li>CATALINA_HOME=/opt/tomcat</li>
+<li>CATALINA_BASE=/opt/tomcat/instances/(8080|8081)</li>
+</ul>
       </section>
     </div>
 
