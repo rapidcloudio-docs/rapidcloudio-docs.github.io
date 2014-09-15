@@ -49,14 +49,14 @@
 <h3>
 <a name="compile-and-package" class="anchor" href="#compile-and-package"><span class="octicon octicon-link"></span></a>Compile and Package</h3>
 
-<p>After cloning your application, you will be ready to build and deploy it. Rapidcloud does it's work by connecting to your server and executing the build commands, they are run from /home/rc-build/repository.</p>
+<p>After cloning your application, you will be ready to build and deploy it. Rapidcloud does it's work by connecting to your server and executing the build commands, they are run from <code>/home/rc-build/repository</code>.</p>
 
 <h4>
 <a name="play" class="anchor" href="#play"><span class="octicon octicon-link"></span></a>Play</h4>
 
 <p>For play projects, the build step default to <code>sbt clean compile stage -Dsbt.log.noformat=true</code> (note: the noformat prevents the control characters from outputting and making the logs hard to read)</p>
 
-<p>You can override these settings on your server's configuration page, however you'll need to make sure sure your application is packaged to deploy in the  target/universal/stage/ folder after execution</p>
+<p>You can override these settings on your server's configuration page, however you'll need to make sure sure your application is packaged to deploy in the  <code>target/universal/stage/</code> folder after execution</p>
 
 <h4>
 <a name="mavenwar-projects" class="anchor" href="#mavenwar-projects"><span class="octicon octicon-link"></span></a>Maven/War Projects</h4>
@@ -84,7 +84,7 @@
 </ol><h4>
 <a name="play-1" class="anchor" href="#play-1"><span class="octicon octicon-link"></span></a>Play</h4>
 
-<p>For play projects rapidcloud will copy the files in target/universal/stage/ to /opt/play/(8000|8001)/ and execute the cmd in /opt/play/(8000|8001)/bin to start the application. Command line arguments can be provided on the server configuration page. </p>
+<p>For play projects rapidcloud will copy the files in <code>target/universal/stage/</code> to <code>/opt/play/(8000|8001)/</code> and execute the cmd in /opt/play/(8000|8001)/bin to start the application. Command line arguments can be provided on the server configuration page. </p>
 
 <h4>
 <a name="tomcat" class="anchor" href="#tomcat"><span class="octicon octicon-link"></span></a>Tomcat</h4>
@@ -176,7 +176,7 @@
 </ul><h3>
 <a name="supervisor" class="anchor" href="#supervisor"><span class="octicon octicon-link"></span></a>Supervisor</h3>
 
-<p>Each application is managed by supervisord to make insure that it stays runnings, to restart it if it fails unexpectedly and provide a easy way to manage its launch configuration.</p>
+<p>Each application is managed by supervisord to insure that it stays running by restarting it automatically if it fails unexpectedly and providing an easy way to manage its launch configuration.</p>
 
 <p>Supervisord config files are located in</p>
 
