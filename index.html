@@ -1,1 +1,50 @@
-Hello World
+# RAPIDCLOUD.IO  Documentation
+## Overview
+
+Rapidcloud.io provides Java developers with turnkey application delivery services to the cloud. 
+
+### Initial Setup
+Use rapidcloud by providing access keys to your AWS, Digital Ocean or Rackspace account and authorizing rapidcloud to read your Github or Bitbucket repositories. Once connected you can use rapidcloud to provision and configure Java webapplication servers in any connected cloud.
+
+### Source Code
+Once the server is setup, use rapidcloud to clone your application respository (from bitbucket or github) onto your cloud server. Rapidcloud does not keep a copy of your source code on its servers. 
+
+### Compile and Package
+When your are ready to build and deploy your application rapidcloud will connect to your server and execute the build commands.
+
+#### Play
+For play projects, it will default to sbt clean compile stage -Dsbt.log.noformat=true (the noformat prevents the control characters from outputting and making the logs hard to read)
+
+You can override these settings on your server's configuration page, you are responsible for making sure your application is packaged to deploy in the  target/universal/stage/ folder after execution
+
+
+#### Maven/War Projects
+For maven projects, it will default to mvn clean package. 
+
+You can override these settings on your server's configuration page, you are responsible to making sure a .war file is packaged in the projects target/ folder after execution.
+
+
+### Deploy
+Once packaged, rapidcloud will attempt to deploy the projects
+
+Rapidcloud offers two deployment strategies. Parallel deployment and traditional deployment. With parallel deployment enabled rapidcloud will alternate between two ports 8080/8081 for Maven/Tomcat projects and 9000/9001 for Play projects. 
+
+The deployment lifecycle works as follows
+
+1. Start the application on the alternate instance (non active port)
+2. Wait for the application start time to complete (adjust the time on the server configuration page)
+3. Verify the application via http at the confirmation url (specified on the server configuration page). If the verifiation url fails to return a 200 status code, stop execution and mark the deployment as failed.
+4. Signal Nginx to send all new requests to the new application instance
+5. Wait 1 minute for existing requests on the old instance to cooldown
+6. Shutdown the old instance
+
+#### Play
+For play projects rapidcloud will copy the files in target/universal/stage/ to /opt/play/(8000|8001)/ and execute the cmd in /opt/play/(8000|8001)/bin to start the application. Command line arguments can be provided on the server configuration page. 
+
+#### Tomcat
+For play projects rapidcloud will copy the war file in target/ to /opt/tomcat/instances/(8080|8081)/webapps/ and start tomcat
+
+
+
+
+
