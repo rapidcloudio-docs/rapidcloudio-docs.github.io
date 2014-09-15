@@ -172,7 +172,26 @@
 <li>/var/log/tomcat/tomcat_8080.out.log</li>
 <li>/var/log/tomcat/tomcat_8081.err.log</li>
 <li>/var/log/tomcat/tomcat_8081.out.log</li>
-</ul>
+</ul><h3>
+<a name="supervisor" class="anchor" href="#supervisor"><span class="octicon octicon-link"></span></a>Supervisor</h3>
+
+<p>Each application server is managed by supervisord to make insure that it stays runnings, to restart it if it fails unexpectedly and provide a easy way to manage its launch configuration.</p>
+
+<p>Supervisord config files are located in</p>
+
+<p><code>/etc/supervisor/conf.d</code></p>
+
+<p>TO view the status of supervisor services type</p>
+
+<p><code>sudo supervisorctl status</code></p>
+
+<p>To restart a service type</p>
+
+<p><code>sudo supervisorctl restart &lt;service_name&gt;</code></p>
+
+<p>Example:
+<code>sudo supervisorctl restart tomcat_8080</code>
+<code>sudo supervisorctl restart play_9000</code></p>
       </section>
     </div>
 
