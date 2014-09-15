@@ -16,21 +16,17 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <h1 id="project_title">Rapidcloud.io Documentation</h1>
+          <a id="forkme_banner" href="https://github.com/rapidcloudio-docs">View on GitHub</a>
+
+          <h1 id="project_title">Documentation</h1>
           <h2 id="project_tagline">Overview</h2>
+
         </header>
     </div>
-	
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
-
-	<nav class="inner">
-		<a href="/">Overview</a> | 
-		<a href="/networks.html">Networks</a>
-	</nav>
-	
-	<section id="main_content" class="inner">
+      <section id="main_content" class="inner">
         <p>Rapidcloud.io provides Java developers with turnkey application delivery services to the cloud. </p>
 
 <h3>
@@ -87,12 +83,45 @@
 <a name="tomcat" class="anchor" href="#tomcat"><span class="octicon octicon-link"></span></a>Tomcat</h4>
 
 <p>For play projects rapidcloud will copy the war file in target/ to /opt/tomcat/instances/(8080|8081)/webapps/ and start tomcat</p>
+
+<h2>
+<a name="networks" class="anchor" href="#networks"><span class="octicon octicon-link"></span></a>Networks</h2>
+
+<h3>
+<a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h3>
+
+<p>Networks allow you to share servers across servers automatically, manage firewall/across rules across servers and define one set of environment variables for multiple servers</p>
+
+<h3>
+<a name="network-services" class="anchor" href="#network-services"><span class="octicon octicon-link"></span></a>Network Services</h3>
+
+<p>Rapidcloud has three network friendly services, Memcached, Redis and MySQL. For an unnetworked server, access to those services is blocked either by iptables or AWS security groups. Only permitting access from the local machine. </p>
+
+<p>When a server is joined to a network, rapidcloud automatically opens the ports to any installed network services up to other members of the network.</p>
+
+<p>If there a Redis or Memcache servers in a network their IP addresses are published as environment variables to all members of the network.</p>
+
+<ol>
+<li>NET_REDIS_SERVERS=ipAddress1,ipAddress2</li>
+<li>NET_MEMCACHE_SERVERS=ipAddress1,ipAddress2</li>
+</ol><h3>
+<a name="network-database" class="anchor" href="#network-database"><span class="octicon octicon-link"></span></a>Network Database</h3>
+
+<p>Rapidcloud allows you to select one of the MySQL instances on a network as the network DB. Once this is down, the network connection informatin will be publishes to the network as environment variables.</p>
+
+<ol>
+<li>NET_DB_NAME=name</li>
+<li>NET_DB_USER=login username</li>
+<li>NET_DB_PASSWORD=login password</li>
+<li>NET_DB_URL=jdbc url to the database</li>
+</ol>
       </section>
     </div>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
 
