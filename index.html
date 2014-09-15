@@ -31,7 +31,8 @@
 
 <p><a href="#general-overview">General Overview</a> | 
 <a href="#networks">Networks</a> | 
-<a href="#server-setup">Server Setup</a> </p>
+<a href="#server-setup">Server Setup</a>  |
+<a href="#frameworks">Framework</a> </p>
 
 <h1>
 <a name="general-overview" class="anchor" href="#general-overview"><span class="octicon octicon-link"></span></a>General Overview</h1>
@@ -207,7 +208,38 @@
 <li>memcached - memcached.supervisor.conf</li>
 <li>reds - redis.supervisor.conf</li>
 <li>remote_syslog (papertail) - remote_syslog.supervisor.conf</li>
-</ul>
+</ul><h1>
+<a name="frameworks" class="anchor" href="#frameworks"><span class="octicon octicon-link"></span></a>Frameworks</h1>
+
+<h3>
+<a name="support-for-war-files" class="anchor" href="#support-for-war-files"><span class="octicon octicon-link"></span></a>Support for war files</h3>
+
+<p>Any framework which uses maven to build a war file should work with rapidcloud. TO get spring-boot to generate a war file you can modify your pom.xml as follows:</p>
+
+<p><code>...</code>
+    <code>&lt;dependency&gt;</code>
+        <code>&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</code>
+        <code>&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</code>
+        <code>&lt;exclusions&gt;</code>
+            <code>&lt;exclusion&gt;</code>
+                <code>&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</code>
+                <code>&lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;</code>
+            <code>&lt;/exclusion&gt;</code>
+        <code>&lt;/exclusions&gt;</code>
+    <code>&lt;/dependency&gt;</code>
+<code>...</code>
+<code>...</code>
+        <code>&lt;!-- this defaults a profile which constructs a war file, use this profile with rapidcloud---&gt;</code>
+         <code>&lt;profile&gt;</code>
+            <code>&lt;id&gt;webapp&lt;/id&gt;</code>
+            <code>&lt;activation&gt;</code>
+                <code>&lt;activeByDefault&gt;false&lt;/activeByDefault&gt;</code>
+            <code>&lt;/activation&gt;</code>
+            <code>&lt;properties&gt;</code>
+                <code>&lt;packaging.type&gt;war&lt;/packaging.type&gt;</code>
+            <code>&lt;/properties&gt;</code>
+         <code>&lt;/profile&gt;</code>
+<code>....</code></p>
       </section>
     </div>
 
