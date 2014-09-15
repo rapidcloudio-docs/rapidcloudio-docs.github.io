@@ -226,17 +226,33 @@
 
 <p>To get spring-boot to generate a war file you can modify your pom.xml as follows:</p>
 
-<pre>
-    ...
+<pre><code>...
 
-    org.springframework.bootspring-boot-starter-weborg.springframework.bootspring-boot-starter-tomcat
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+    &lt;exclusions&gt;
+        &lt;exclusion&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;
+        &lt;/exclusion&gt;
+    &lt;/exclusions&gt;
+&lt;/dependency&gt;
 
-    ...
-    
-     webappfalsewar
-    
-    ...
-</pre>
+...
+
+ &lt;profile&gt;
+    &lt;id&gt;webapp&lt;/id&gt;
+    &lt;activation&gt;
+        &lt;activeByDefault&gt;false&lt;/activeByDefault&gt;
+    &lt;/activation&gt;
+    &lt;properties&gt;
+        &lt;packaging.type&gt;war&lt;/packaging.type&gt;
+    &lt;/properties&gt;
+&lt;/profile&gt;
+
+...
+</code></pre>
       </section>
     </div>
 
