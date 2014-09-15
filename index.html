@@ -180,21 +180,22 @@
 
 <p>Supervisord config files are located in</p>
 
-<p><code>/etc/supervisor/conf.d</code></p>
+<ul>
+<li><code>/etc/supervisor/conf.d</code></li>
+</ul><p>To view the status of supervisor services type</p>
 
-<p>TO view the status of supervisor services type</p>
+<ul>
+<li><code>sudo supervisorctl status</code></li>
+</ul><p>To restart a service type</p>
 
-<p><code>sudo supervisorctl status</code></p>
+<ul>
+<li><code>sudo supervisorctl restart &lt;service_name&gt;</code></li>
+</ul><p>Example:</p>
 
-<p>To restart a service type</p>
-
-<p><code>sudo supervisorctl restart &lt;service_name&gt;</code></p>
-
-<p>Example:
-<code>sudo supervisorctl restart tomcat_8080</code>
-<code>sudo supervisorctl restart play_9000</code></p>
-
-<p>Supervisord also manages</p>
+<ul>
+<li><code>sudo supervisorctl restart tomcat_8080</code></li>
+<li><code>sudo supervisorctl restart play_9000</code></li>
+</ul><p>Supervisord also manages</p>
 
 <ul>
 <li>nginx - nginx.supervisor.conf</li>
