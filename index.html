@@ -126,6 +126,32 @@
 <h3>
 <a name="application" class="anchor" href="#application"><span class="octicon octicon-link"></span></a>Application</h3>
 
+<h4>
+<a name="play-2" class="anchor" href="#play-2"><span class="octicon octicon-link"></span></a>Play</h4>
+
+<p>Play is located in
+<code>/opt/play</code></p>
+
+<p>It is organized into two folders which the deployer switches back and forth between during parallel deployments.</p>
+
+<ul>
+<li>/opt/play/9000</li>
+<li>/opt/play/9001</li>
+</ul><p>Each instance has its own log directory</p>
+
+<ul>
+<li>/opt/play/9000/logs</li>
+<li>/opt/play/9001/logs</li>
+</ul><p>Standard error and standard out written to </p>
+
+<ul>
+<li>/var/log/play/play_9000.err.log</li>
+<li>/var/log/play/play_9000.out.log</li>
+<li>/var/log/play/play_9001.err.log</li>
+<li>/var/log/play/play_9001.out.log</li>
+</ul><h4>
+<a name="tomcat-1" class="anchor" href="#tomcat-1"><span class="octicon octicon-link"></span></a>Tomcat</h4>
+
 <p>Tomcat is located in
 <code>/opt/tomcat/</code></p>
 
@@ -134,6 +160,18 @@
 <ul>
 <li>CATALINA_HOME=/opt/tomcat</li>
 <li>CATALINA_BASE=/opt/tomcat/instances/(8080|8081)</li>
+</ul><p>Each instance has its own log directory</p>
+
+<ul>
+<li>/opt/tomcat/instances/8080/log/</li>
+<li>/opt/tomcat/instances/8081/log/</li>
+</ul><p>Standard error and standard out are written to</p>
+
+<ul>
+<li>/var/log/tomcat/tomcat_8080.err.log</li>
+<li>/var/log/tomcat/tomcat_8080.out.log</li>
+<li>/var/log/tomcat/tomcat_8081.err.log</li>
+<li>/var/log/tomcat/tomcat_8081.out.log</li>
 </ul>
       </section>
     </div>
