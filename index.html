@@ -175,7 +175,7 @@
 </ul><h3>
 <a name="supervisor" class="anchor" href="#supervisor"><span class="octicon octicon-link"></span></a>Supervisor</h3>
 
-<p>Each application server is managed by supervisord to make insure that it stays runnings, to restart it if it fails unexpectedly and provide a easy way to manage its launch configuration.</p>
+<p>Each application is managed by supervisord to make insure that it stays runnings, to restart it if it fails unexpectedly and provide a easy way to manage its launch configuration.</p>
 
 <p>Supervisord config files are located in</p>
 
@@ -192,6 +192,15 @@
 <p>Example:
 <code>sudo supervisorctl restart tomcat_8080</code>
 <code>sudo supervisorctl restart play_9000</code></p>
+
+<p>Supervisord also manages</p>
+
+<ul>
+<li>nginx - nginx.supervisor.conf</li>
+<li>memcached - memcached.supervisor.conf</li>
+<li>reds - redis.supervisor.conf</li>
+<li>remote_syslog (papertail) - remote_syslog.supervisor.conf</li>
+</ul>
       </section>
     </div>
 
