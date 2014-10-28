@@ -107,6 +107,24 @@
 <li>DB_URL=local database jdbc url </li>
 </ul>
 
+<h3>
+<a name="logging-into-mysql" class="anchor" href="#logging-into-mysql"><span class="octicon octicon-link"></span></a>Logging into MySQL</h3>
+
+<p>Rapidcloud creates an administration account for you to use with the username rc-user. The password for that account
+is emailed to you as part of your server setup. To access your database remotely you'll need to ssh into your machine, then use the rc-user database login to access the database. </p>
+
+<p>Conveniently MySQL workbench supports a login over ssh. When you add a connection, specify "Standard TCP/IP over SSH" as the method. Provide the following parameters</p>
+
+<ul>
+<li>SSH Username: rc-user</li>
+<li>SSH Hostname: </li>
+<li>SSH Key File: The private key which matches the public key you upload to your instance (via ssh page)</li>
+<li>MySQL Hostnane: 127.0.0.1</li>
+<li>MySQL Server Port: 3306</li>
+<li>Username: rc-user</li>
+<li>Password: </li>
+</ul>
+
 <h2>
 <a name="networks" class="anchor" href="#networks"><span class="octicon octicon-link"></span></a>Networks</h2>
 
