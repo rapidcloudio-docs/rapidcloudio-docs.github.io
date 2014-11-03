@@ -1,0 +1,33 @@
+# Site settings
+title: docs.rapidcloud.io
+email: fred@rapidcloud.io
+author: Frederic Jambukeswaran
+description: > # this means to ignore newlines until "baseurl:"
+  Documentation, tutorials and quickstart guides to help you 
+  make the most of your rapidcloud.io account	
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "/" # the base hostname & protocol for your site
+google_analytics:
+# Optional features
+animated:           false
+show_related_posts: false
+show_post_footers:  false
+
+# Social icons
+show_social_icons: false
+github_username:
+twitter_username:
+google_plus_id:
+linkedin_username:
+bitcoin_url:
+paypal_url:
+flattr_button:
+
+# Build settings
+markdown:     kramdown
+permalink:    pretty
+paginate:     3
+sass:
+  compressed: true
+highlighter: rouge
+

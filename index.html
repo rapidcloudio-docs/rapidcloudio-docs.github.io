@@ -1,137 +1,23 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+---
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Documentation : Rapidcloud Single Page Documentation">
+<div class="home">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Documentation</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/rapidcloudio-docs">View on GitHub</a>
-
-          <h1 id="project_title">Documentation</h1>
-          <h2 id="project_tagline">Rapidcloud Single Page Documentation</h2>
-
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>Rapidcloud.io provides Java developers with turnkey application delivery services to the cloud. </p>
-
-<p><a href="#general-overview">General Overview</a> | 
-<a href="#networks">Networks</a></p>
-
-<h1>
-<a name="general-overview" class="anchor" href="#general-overview"><span class="octicon octicon-link"></span></a>General Overview</h1>
-
-<h3>
-<a name="initial-setup" class="anchor" href="#initial-setup"><span class="octicon octicon-link"></span></a>Initial Setup</h3>
-
-<p>Use rapidcloud by providing access keys to your AWS, Digital Ocean or Rackspace account and authorizing rapidcloud to read your Github or Bitbucket repositories. Once connected you can use rapidcloud to provision and configure Java webapplication servers in any connected cloud.</p>
-
-<h3>
-<a name="source-code" class="anchor" href="#source-code"><span class="octicon octicon-link"></span></a>Source Code</h3>
-
-<p>Once the server is setup, use rapidcloud to clone your application respository (from bitbucket or github) onto your cloud server. Rapidcloud does not keep a copy of your source code on its servers. </p>
-
-<h3>
-<a name="compile-and-package" class="anchor" href="#compile-and-package"><span class="octicon octicon-link"></span></a>Compile and Package</h3>
-
-<p>When your are ready to build and deploy your application rapidcloud will connect to your server and execute the build commands.</p>
-
-<h4>
-<a name="play" class="anchor" href="#play"><span class="octicon octicon-link"></span></a>Play</h4>
-
-<p>For play projects, it will default to sbt clean compile stage -Dsbt.log.noformat=true (the noformat prevents the control characters from outputting and making the logs hard to read)</p>
-
-<p>You can override these settings on your server's configuration page, you are responsible for making sure your application is packaged to deploy in the  target/universal/stage/ folder after execution</p>
-
-<h4>
-<a name="mavenwar-projects" class="anchor" href="#mavenwar-projects"><span class="octicon octicon-link"></span></a>Maven/War Projects</h4>
-
-<p>For maven projects, it will default to mvn clean package. </p>
-
-<p>You can override these settings on your server's configuration page, you are responsible to making sure a .war file is packaged in the projects target/ folder after execution.</p>
-
-<h3>
-<a name="deploy" class="anchor" href="#deploy"><span class="octicon octicon-link"></span></a>Deploy</h3>
-
-<p>Once packaged, rapidcloud will attempt to deploy the projects</p>
-
-<p>Rapidcloud offers two deployment strategies. Parallel deployment and traditional deployment. With parallel deployment enabled rapidcloud will alternate between two ports 8080/8081 for Maven/Tomcat projects and 9000/9001 for Play projects. </p>
-
-<p>The deployment lifecycle works as follows</p>
-
-<ol>
-<li>Start the application on the alternate instance (non active port)</li>
-<li>Wait for the application start time to complete (adjust the time on the server configuration page)</li>
-<li>Verify the application via http at the confirmation url (specified on the server configuration page). If the verifiation url fails to return a 200 status code, stop execution and mark the deployment as failed.</li>
-<li>Signal Nginx to send all new requests to the new application instance</li>
-<li>Wait 1 minute for existing requests on the old instance to cooldown</li>
-<li>Shutdown the old instance</li>
-</ol><h4>
-<a name="play-1" class="anchor" href="#play-1"><span class="octicon octicon-link"></span></a>Play</h4>
-
-<p>For play projects rapidcloud will copy the files in target/universal/stage/ to /opt/play/(8000|8001)/ and execute the cmd in /opt/play/(8000|8001)/bin to start the application. Command line arguments can be provided on the server configuration page. </p>
-
-<h4>
-<a name="tomcat" class="anchor" href="#tomcat"><span class="octicon octicon-link"></span></a>Tomcat</h4>
-
-<p>For play projects rapidcloud will copy the war file in target/ to /opt/tomcat/instances/(8080|8081)/webapps/ and start tomcat</p>
-
-<h2>
-<a name="networks" class="anchor" href="#networks"><span class="octicon octicon-link"></span></a>Networks</h2>
-
-<h3>
-<a name="network-overview" class="anchor" href="#network-overview"><span class="octicon octicon-link"></span></a>Network Overview</h3>
-
-<p>Networks allow you to share servers across servers automatically, manage firewall/across rules across servers and define one set of environment variables for multiple servers</p>
-
-<h3>
-<a name="network-services" class="anchor" href="#network-services"><span class="octicon octicon-link"></span></a>Network Services</h3>
-
-<p>Rapidcloud has three network friendly services, Memcached, Redis and MySQL. For an unnetworked server, access to those services is blocked either by iptables or AWS security groups. Only permitting access from the local machine. </p>
-
-<p>When a server is joined to a network, rapidcloud automatically opens the ports to any installed network services up to other members of the network.</p>
-
-<p>If there a Redis or Memcache servers in a network their IP addresses are published as environment variables to all members of the network.</p>
-
-<ol>
-<li>NET_REDIS_SERVERS=ipAddress1,ipAddress2</li>
-<li>NET_MEMCACHE_SERVERS=ipAddress1,ipAddress2</li>
-</ol><h3>
-<a name="network-database" class="anchor" href="#network-database"><span class="octicon octicon-link"></span></a>Network Database</h3>
-
-<p>Rapidcloud allows you to select one of the MySQL instances on a network as the network DB. Once this is down, the network connection informatin will be publishes to the network as environment variables.</p>
-
-<ol>
-<li>NET_DB_NAME=name</li>
-<li>NET_DB_USER=login username</li>
-<li>NET_DB_PASSWORD=login password</li>
-<li>NET_DB_URL=jdbc url to the database</li>
-</ol>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
-</html>
+	<h1 class="page-heading">Tutorials</h1>
+	 
+	<div class="posts">
+		{% assign posts = (site.categories.walkthrough | sort: 'position') %}
+		{% for post in posts %}
+			<div class="post">
+				<a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+				  <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+				  <h3 class="h2 post-title">{{ post.title }}</h3>
+				  <p class="post-summary">{{ post.excerpt }}</p>
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+	
+	{% include pagination.html %}
+</div>
