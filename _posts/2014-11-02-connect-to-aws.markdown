@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Connecting to AWS
-date:   2014-10-31 12:38:28
+date:   2014-11-02 12:38:28
 position: 15
 categories: walkthrough
 summary: Step by step guide for connecting your rapidcloud.io account to your AWS account.

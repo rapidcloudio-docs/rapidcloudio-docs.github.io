@@ -6,13 +6,17 @@ position: 20
 categories: walkthrough
 summary: A configuration guide for provisioning your server in the cloud. This guide will explain the configuration options you can provide and detail the steps rapidcloud.io will take on your behalf to get your instance ready.
 ---
-Before rapidcloud.io can work with your cloud provider you must provide your cloud access keys. Follow these instructions to grant rapidcloud.io access to your cloud account if you haven't done so already. 
+## Prerequisites
+Before rapidcloud.io can work with your cloud provider you must provide your cloud access keys. For AWS users we've created a step by step walk through, [follow these instructions]({% post_url 2014-11-02-connect-to-aws %})to grant rapidcloud.io access to your cloud account. 
 
-When provisioning your instance, you will be prompted to provide some key details
+## Walk through
+Get started at the [add server page](https://rapidcloud.io/my/server/add).
+
+Select the cloud you want to use
 
 ![Server Configuration](/assets/server_add_select_cloud.png)
 
-1. Cloud - Which cloud do you want to use (if you have only connected one cloud then rapidcloud will autoselect it for you)
+Provide the configuration details for your new server instance
 
 ![Server Configuration](/assets/server_add.png)
 
@@ -24,7 +28,7 @@ When provisioning your instance, you will be prompted to provide some key detail
 1. Project type - You must select the type of application this server will be configured for. If its a Tomcat application the server will have tomcat setup and installed. If its a Play application, the server will be configured appropriately. This cannot be changed later so make sure you know the type of project. If you are unsure, Tomcat is the safest bet, most applications offer support for Maven and allow you to package thems up as .war files.
 
 
-Once you have provided all the details, rapidcloud.io will perform the following steps
+#### Once you have provided all the details, rapidcloud.io will perform the following steps
 
 1. Provision the instance with your cloud provider
 1. Wait until the instance is up and able to accept SSH connections
@@ -33,4 +37,4 @@ Once you have provided all the details, rapidcloud.io will perform the following
 1. Email you rc-user credentials (You will reieve an email with your instances IP Address, rc-user sudo password and if you installed MySQL you mysql rc-user password)
 
 
-Once this is complete, you cand deploy your application to the server.
+#### After your server setup is complete you can [deploy your application]({% post_url 2014-10-29-deploy-your-application %}) to the server.
