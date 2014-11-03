@@ -4,6 +4,7 @@ title: Using MySQL
 date:   2014-11-02 12:38:28
 position: 6
 categories: walkthrough
+summary: An overview of how to use MySQL with your application as well as how to login and administer the database yourself.
 ---
 If you choose to install MySQL on your server, the database credentials are automatically provided as environment variables to your application. The variables are:
 

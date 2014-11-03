@@ -4,9 +4,9 @@ title: Provisioning
 date:   2014-10-29 12:38:28
 position: 2
 categories: walkthrough
+summary: A configuration guide for provisioning your server in the cloud. This guide will explain the configuration options you can provide and detail the steps rapidcloud.io will take on your behalf to get your instance ready.
 ---
-Before rapidcloud.io can work with your cloud provider you must provide your cloud access keys. Follow these instructions to grant rapidcloud.io access to your cloud account if you haven't done so already.
-
+Before rapidcloud.io can work with your cloud provider you must provide your cloud access keys. Follow these instructions to grant rapidcloud.io access to your cloud account if you haven't done so already. 
 
 When provisioning your instance, you will be prompted to provide some key details
 

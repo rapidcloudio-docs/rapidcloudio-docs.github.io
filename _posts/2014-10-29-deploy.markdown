@@ -4,6 +4,8 @@ title: Deploying Your Application
 date:   2014-10-29 12:38:28
 position: 3
 categories: walkthrough
+summary: Step by step walkthrough to getting your application installed from GitHub or Bitbucket, built and deployed to your new server. 
+
 ---
 Once you've finished provisioning a server, you will be able to deploy your Java web application to the instance. This process consists of three steps
 

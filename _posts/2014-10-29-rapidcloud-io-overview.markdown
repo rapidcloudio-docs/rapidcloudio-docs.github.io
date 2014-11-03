@@ -4,6 +4,7 @@ title: Overview
 date:   2014-10-31 12:38:28
 position: 1
 categories: walkthrough
+summary: An overview of rapidcloud.io services and how you can use rapidcloud.io simplify the deployment and management of your application in the cloud.
 ---
 Rapidcloud is a cloud management and continuous delivery service for Java application. Our service allows you to provision an instance within your personal account with AWS (Amazon Web Services), Digital Ocean or Rackspace. 
 
