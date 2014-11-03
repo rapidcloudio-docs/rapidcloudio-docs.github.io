@@ -30,4 +30,5 @@ paginate:     3
 sass:
   compressed: true
 #highlighter: rouge
+excerpt_separator: "\n\n"
 
