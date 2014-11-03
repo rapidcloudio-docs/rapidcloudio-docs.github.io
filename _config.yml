@@ -29,5 +29,5 @@ permalink:    pretty
 paginate:     3
 sass:
   compressed: true
-highlighter: rouge
+#highlighter: rouge
 
