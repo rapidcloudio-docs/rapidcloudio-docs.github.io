@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Viewing Deploy Logs
+title: Deployment Logs
 date:   2014-10-31 12:38:28
 position: 4
 categories: walkthrough

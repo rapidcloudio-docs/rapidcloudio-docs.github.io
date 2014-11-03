@@ -1,0 +1,37 @@
+---
+layout: post
+title: Using MySQL
+date:   2014-11-02 12:38:28
+position: 6
+categories: walkthrough
+---
+If you choose to install MySQL on your server, the database credentials are automatically provided as environment variables to your application. The variables are:
+
+{% highlight java %}
+DB_NAME=local database name
+DB_USER=local database login username
+DB_PASSWORD=local database login password
+DB_URL=local database jdbc url
+{% endhighlight %}
+
+## Logging into MySQL
+Rapidcloud creates an administration account for you to use with the username rc-user. The password for that account is emailed to you as part of your server setup. To access your database remotely you'll need to ssh into your machine, then use the rc-user database login to access the database.
+
+From your server, you can do the following to login:
+{% highlight java %}
+$ mysql -urc-user -p
+{% endhighlight %}
+
+Conveniently MySQL workbench supports a login over ssh. When you add a connection, specify "Standard TCP/IP over SSH" as the method. Provide the following parameters
+
+![MySQL Workbench Connection](/assets/mysql-workbench-connection.png)
+
+{% highlight java %}
+SSH Username: rc-user
+SSH Hostname: (IP Address of your instance)
+SSH Key File: The private key which matches the public key you upload to your instance (via ssh page)
+MySQL Hostnane: 127.0.0.1
+MySQL Server Port: 3306
+Username: rc-user
+Password: (This password was sent to you via email when server was provisioned)
+{% endhighlight %}

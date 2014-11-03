@@ -1,0 +1,23 @@
+---
+layout: post
+title: What types of applications are supported?
+date:   2014-10-29 12:38:28
+position: 2
+categories: faq
+---
+
+
+Rapidcloud.io supports the management and deployment of Play! 2 Web applications (built with sbt) or Java web applications packaged into a war file with Maven. Play applications are launched from the command line while Maven projects have their war filed deployed to Tomcat.
+
+
+## Play
+
+The default build for Play applications
+<code>sbt clean compile stage -Dsbt.log.noformat=true</code>
+
+## Maven (Tomcat)
+
+The default build for Maven applications
+<code>mvn clean package</code>
+
+The output from this command must produce a war file, otherwise rapidcloud.io will mark the deployment as failed.

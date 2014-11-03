@@ -10,35 +10,39 @@ Any of your servers can be accessed via SSH once you upload your public key.
 1. Generate an ssh key using the following command: ssh-keygen
 1. Follow the steps to setup a key
 
+In this example, I'll create an ssh key in the default folder with no passphrase:
+
 {% highlight bash %}
 $ ssh-keygen
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/fred/.ssh/id_rsa): test_rsa
+Enter file in which to save the key (/home/fred/.ssh/id_rsa):
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
-Your identification has been saved in test_rsa.
-Your public key has been saved in test_rsa.pub.
+Your identification has been saved in /home/fred/.ssh/id_rsa.
+Your public key has been saved in /home/fred/.ssh/id_rsa.pub.
 The key fingerprint is:
-c6:11:e8:d6:fb:18:fc:78:7c:bd:6d:2c:2e:47:d3:2d fred@FredLenovo
+14:ec:a6:03:9a:52:2e:0c:7a:a9:40:05:be:7b:ee:e2 fred@FredLenovo
 The key's randomart image is:
 +--[ RSA 2048]----+
-|       ..        |
-|      .  .       |
-|     . ..        |
-|      o...       |
-|     . .S.     ..|
-|       .+     E o|
-|         B   o + |
-|        o = o +.o|
-|         . . +o+.|
+| ..    ..        |
+|.  .    ..       |
+| ..    ..        |
+|..o .  .o        |
+|=+ + . oS        |
+|=.B   o          |
+|.* .   .         |
+|..o              |
+|.Eoo             |
 +-----------------+
 
-$ ls
-test_rsa  test_rsa.pub
+$ ls ~/.ssh/
+bak  id_rsa  id_rsa.pub  known_hosts  known_hosts.old
+
+$
 {% endhighlight %}
 
 
-Once its complete, copy the contents of the public key file(by default its located here: ~/.ssh/id_rsa.pub) and upload it to rapidcloud. 
+Once its complete, copy the contents of the public key file, by default its located here: ~/.ssh/id_rsa.pub and upload it to rapidcloud. 
 
 ![Upload SSH Key](/assets/upload_ssh_key.png)
 

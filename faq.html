@@ -1,0 +1,25 @@
+---
+layout: default
+title: Frequently Asked Questions
+permalink: /faq/
+---
+
+<div class="home">
+
+	<h1 class="page-heading">FAQs</h1>
+	 
+	<div class="posts">
+		{% assign posts = (site.categories.faq | sort: 'position') %}
+		{% for post in posts %}
+			<div class="post">
+				<a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+				  <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+				  <h3 class="h2 post-title">{{ post.title }}</h3>
+				  <p class="post-summary">{{ post.excerpt }}</p>
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+	
+	{% include pagination.html %}
+</div>

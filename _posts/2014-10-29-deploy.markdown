@@ -23,8 +23,10 @@ Once you've done that, go your your server's repository page and provide the fol
 2. Repository Name - What is the name of your repository. If you don't have one yet, you can fork one of our quickstart application.
 3. Branch - Which branch do you want to pull from. This can be the master branch or any branch you have defined. 
 
-Once you've finished this step, your repository will be cloned on your server.
+Once you've finished this step, your repository will be cloned on your server.  
 
+Your repository will be stored in:
+<code>/home/rc-build/repository</code>
 
 # Configure your deploy settings
 Deployment settings are one of the most complex features of rapidcloud.io. They also depend on which type of project you are deploying. 
@@ -35,7 +37,7 @@ Tomcat projects, use Maven to build and package up your war file. You'll have th
 ![Tomcat Configuration](/assets/tomcat_configuration.png)
 
 1. Autodeploy (Yes/No) - Should rapidcloud.io automatically check for changes in your repository and if it finds them automatically attempt to deploy them. 
-1. Build Strategy (Custom/Default) - Default means maven is exected with the command "mvn clean package". If you want to run other commands or change that you can customize it here. However after this command is run, rapidcloud will require that a war file be present in the target/ directory.
+1. Build Strategy (Custom/Default) - Default means maven is executed with the command "mvn clean package". If you want to run other commands or change that you can customize it here. However after this command is run, rapidcloud will require that a war file be present in the target/ directory. (Note: Your build command is executed from the /home/rc-build/repository directory)
 1. Profiles - Specify which build profile(s) should be used. If you are using our springboot quickstart, then specify the profile webapp
 1. Additioanl Arguments - If you want to pass run time arguments to catalina.sh, provide them here. Note: Whatever is provided in this field will be passed verbatim to catalina.sh
 1. Startup time - How much time should your application be given to startup. 
@@ -46,7 +48,7 @@ Tomcat projects, use Maven to build and package up your war file. You'll have th
 ![Play Configuration](/assets/play_configuration.png)
 
 1. Autodeploy (Yes/No) - Should rapidcloud.io automatically check for changes in your repository and if it finds them automatically attempt to deploy them. 
-1. Build Strategy (Custom/Default) - Default means sbt is exected with the command "sbt clean compile stage -Dsbt.log.noformat=true". If you want to run other commands or change that you can customize it here. However after this command is run, rapidcloud will require that play is packaged for deployment.
+1. Build Strategy (Custom/Default) - Default means sbt is exected with the command "sbt clean compile stage -Dsbt.log.noformat=true". If you want to run other commands or change that you can customize it here. However after this command is run, rapidcloud will require that play is packaged for deployment. (Note: Your build command is executed from the /home/rc-build/repository directory)
 1. Apply (default) database evolutions - Should Play attempt to apply the forward database evolutions automatically. This is only recommended for development environments.
 1. Config Resource - Specify the name of the application conf file you want to use. Play will look for it on the classpath.
 1. Logging Resource - Specify the name of the logging conf file you want to use. Play will look for it on the classpath.
