@@ -2,7 +2,7 @@
 layout: post
 title: Deploying Your Application
 date:   2014-10-29 12:38:28
-position: 3
+position: 30
 categories: walkthrough
 summary: Step by step walkthrough to getting your application installed from GitHub or Bitbucket, built and deployed to your new server. 
 

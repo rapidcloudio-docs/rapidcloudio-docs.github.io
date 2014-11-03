@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Using MySQL
+title: Managing MySQL
 date:   2014-11-02 12:38:28
-position: 6
+position: 60
 categories: walkthrough
 summary: An overview of how to use MySQL with your application as well as how to login and administer the database yourself.
 ---

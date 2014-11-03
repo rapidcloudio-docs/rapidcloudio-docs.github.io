@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Provisioning
+title: Launching Your Server
 date:   2014-10-29 12:38:28
-position: 2
+position: 20
 categories: walkthrough
 summary: A configuration guide for provisioning your server in the cloud. This guide will explain the configuration options you can provide and detail the steps rapidcloud.io will take on your behalf to get your instance ready.
 ---

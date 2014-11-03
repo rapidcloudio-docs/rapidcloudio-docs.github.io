@@ -2,7 +2,7 @@
 layout: post
 title: SSH Access
 date:   2014-10-31 12:38:28
-position: 10
+position: 100
 categories: walkthrough
 summary: How to gain SSH and sudo access to your server instance.
 ---
