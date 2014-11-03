@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Connect to AWS
+title: Connecting to AWS
 date:   2014-10-31 12:38:28
 position: 15
 categories: walkthrough
