@@ -9,6 +9,7 @@ summary: We created a fast way to get started using a preconfigured scaffolded s
 
 ##Prerequisites
 A server provisioned with MySQL and Tomcat 8/Maven. 
+![GitHub Screenshot](/assets/quickstart_springboot_pre_req.png)
 
 
 ## Fork the quickstart project
