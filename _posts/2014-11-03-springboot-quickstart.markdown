@@ -3,7 +3,7 @@ layout: post
 title: Quickstart with Springboot
 date:   2014-11-03 12:38:28
 position: 25
-categories: walkthrough
+categories: walkthrough quickstart
 summary: We created a fast way to get started using a preconfigured scaffolded springboot application. 
 ---
 
