@@ -8,8 +8,17 @@ summary: How to gain SSH and sudo access to your server instance.
 ---
 Any of your servers can be accessed via SSH once you upload your public key. 
 
-1. Generate an ssh key using the following command: ssh-keygen
-1. Follow the steps to setup a key
+Key steps
+
+1. Generate an SSH key (if you don't already have one)
+1. Upload your SSH key
+1. SSH onto your server
+1. Sudo access
+1. Resetting your sudo password
+
+
+### Generate an SSH key
+From your console (linux, mac or cygwin), run the command <code>ssh-keygen</code>
 
 In this example, I'll create an ssh key in the default folder with no passphrase:
 
@@ -42,7 +51,7 @@ bak  id_rsa  id_rsa.pub  known_hosts  known_hosts.old
 $
 {% endhighlight %}
 
-
+### Upload your SSH key
 Once its complete, copy the contents of the public key file, by default its located here: ~/.ssh/id_rsa.pub and upload it to rapidcloud. 
 
 ![Upload SSH Key](/assets/upload_ssh_key.png)
@@ -52,6 +61,7 @@ Once its complete, copy the contents of the public key file, by default its loca
 
 After you click the Add Public Key button, rapidcloud will publish your key to the server, this may take a few minutes. 
 
+### SSH onto your server
 Once your key has been successfully published, you'll be able to log into your server with the following ssh command:
 	
 {% highlight bash %}
@@ -63,12 +73,13 @@ Using our server example:
 ssh -i test_rsa rc-user@107.170.140.205
 {% endhighlight %}
 
+### Sudo access
 In order to gain root access you'll be required to provide the sudo password you were emailed when your server was setup.
 {% highlight bash %}
 $ sudo su
 {% endhighlight %}
 
-
+### Resetting your sudo password
 If you lost the email, you can reset your rc-user password from the password page.
 
 ![Password Reset Page](/assets/password.png)
