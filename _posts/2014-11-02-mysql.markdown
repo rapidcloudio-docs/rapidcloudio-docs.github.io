@@ -8,7 +8,7 @@ summary: An overview of how to use MySQL with your application as well as how to
 ---
 If you choose to install MySQL on your server, the database credentials are automatically provided as environment variables to your application. The variables are:
 
-{% highlight java %}
+{% highlight bash %}
 DB_NAME=local database name
 DB_USER=local database login username
 DB_PASSWORD=local database login password
@@ -16,10 +16,12 @@ DB_URL=local database jdbc url
 {% endhighlight %}
 
 ## Logging into MySQL
-Rapidcloud creates an administration account for you to use with the username rc-user. The password for that account is emailed to you as part of your server setup. To access your database remotely you'll need to [ssh into your machine]({% post_url 2014-10-31-ssh-into-server %}), then use the rc-user database login to access the database.
+Rapidcloud creates an administration account for you to use with the username rc-user (the password is emailed to you as part of your server setup). For security purposes remote access to MySQL is severely limited (by default only network members can connect). 
 
-From your server, you can do the following to login:
-{% highlight java %}
+In order to access your database remotely you'll need to [ssh into your server]({% post_url 2014-10-31-ssh-into-server %}), then use your rc-user database login to access the database.
+
+From your server, you can execute the following command to login
+{% highlight bash %}
 $ mysql -urc-user -p
 {% endhighlight %}
 
@@ -27,13 +29,13 @@ Conveniently MySQL workbench supports logging in over ssh
 
 ![MySQL Workbench Connection](/assets/mysql-workbench-connection.png)
 
-{% highlight java %}
-Connection Method: Standard TCP/IP over SSH
-SSH Username: rc-user
-SSH Hostname: (IP Address of your instance)
-SSH Key File: The private key which matches the public key you upload to your instance (via ssh page)
-MySQL Hostnane: 127.0.0.1
-MySQL Server Port: 3306
-Username: rc-user
-Password: (This password was sent to you via email when server was provisioned)
-{% endhighlight %}
+
+1. Connection Method: Standard TCP/IP over SSH
+1. SSH Username: rc-user
+1. SSH Hostname: (IP Address of your instance)
+1. SSH Key File: The private key which matches the public key you uploaded to your instance ([via ssh page]({% post_url 2014-10-31-ssh-into-server %}))
+1. MySQL Hostnane: 127.0.0.1
+1. MySQL Server Port: 3306
+1. Username: rc-user
+1. Password: (This password was sent to you via email when server was provisioned)
+
