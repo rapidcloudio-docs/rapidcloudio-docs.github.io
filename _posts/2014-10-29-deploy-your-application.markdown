@@ -58,6 +58,7 @@ Tomcat projects, use Maven to build and package up your war file. You'll have th
 1. Additional Arguments - Any additional command line arguments you may want to pass to Play. These are provided verbatim to the Play startup script.
 1. Startup time - How much time should your application be given to startup. 
 1. Confirmation Url (optional) - After deployment which url should be checked to verify that deployment was successful. This is very useful especially when running parallel deployments.
+1. Enable parallel deployment (Yes/No) - If set to no, rapidcloud.io will restart play (/opt/play/9000) with each deployment. If set to yes, rapidcloud.io will alternate deployments between two play instances (/opt/play/9000 and /opt/play/9001), waiting for the new instance to start before terminating the old one. This is a good option to minimize downtime.
 
 ## Deploying
 Click Deploy Now once you are ready to deploy. Your request will be confirmed by a small toast in the bottom right of your screen.
