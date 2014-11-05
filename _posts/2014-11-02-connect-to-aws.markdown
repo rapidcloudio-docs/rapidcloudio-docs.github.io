@@ -24,6 +24,7 @@ For policy, select Custom Policy
 ![Select Policy Template](/assets/get_key_aws_step4.png)
 
 Provide the rapidcloud.io policy document
+![Set Permissions](/assets/get_key_aws_step5.png)
 {% highlight javascript %}
 {
   "Version": "2012-10-17",
@@ -37,7 +38,7 @@ Provide the rapidcloud.io policy document
 }
 {% endhighlight %}
 
-![Set Permissions](/assets/get_key_aws_step5.png)
+Provide your new access key to rapidcloud
 
 1. Login to your rapidcloud.io account
 1. Navigate to the [cloud management page](https://rapidcloud.io/my/cloud)
