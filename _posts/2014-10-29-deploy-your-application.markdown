@@ -13,7 +13,7 @@ Once you've finished provisioning a server, you will be able to deploy your Java
 1. Configure your deploy settings
 1. Run the deploy step
 
-# Clone your Git Repository
+## Clone your Git Repository
 
 To install your GIT repository, you'll need to have connected your rapidcloud.io account to BitBucket and/or Github. At this time rapidcloud.io only supports pulling applications from those two services.
 
@@ -30,10 +30,10 @@ Once you've finished this step, your repository will be cloned on your server.
 Your repository will be stored in:
 <code>/home/rc-build/repository</code>
 
-# Configure your deploy settings
+## Configure your deploy settings
 Deployment settings are one of the most complex features of rapidcloud.io. They also depend on which type of project you are deploying. 
 
-## Tomcat Projects
+### Tomcat Projects
 Tomcat projects, use Maven to build and package up your war file. You'll have the following configuration options
 
 ![Tomcat Configuration](/assets/tomcat_configuration.png)
@@ -45,7 +45,7 @@ Tomcat projects, use Maven to build and package up your war file. You'll have th
 1. Startup time - How much time should your application be given to startup. 
 1. Confirmation Url (optional) - After deployment which url should be checked to verify that deployment was successful. This is very useful especially when running parallel deployments.
 
-## Play Projects
+### Play Projects
 
 ![Play Configuration](/assets/play_configuration.png)
 
@@ -59,9 +59,9 @@ Tomcat projects, use Maven to build and package up your war file. You'll have th
 1. Confirmation Url (optional) - After deployment which url should be checked to verify that deployment was successful. This is very useful especially when running parallel deployments.
 
 ## Deploying
-
+Click Deploy Now once you are ready to deploy. Your request will be confirmed by a small toast in the bottom right of your screen.
 ![Deploy Now](/assets/deploy_now.png)
 
-1. Click Deploy Now once you are ready to deploy. Your request will be confirmed by a small toast in the bottom right of your screen.
+
 
 
