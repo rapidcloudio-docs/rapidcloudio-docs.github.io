@@ -8,13 +8,13 @@ summary: How to gain SSH and sudo access to your server instance.
 ---
 Any of your servers can be accessed via SSH once you upload your public key. 
 
-Key steps
+This guide will demonstrate how to:
 
 1. Generate an SSH key (if you don't already have one)
 1. Upload your SSH key
 1. SSH onto your server
-1. Sudo access
-1. Resetting your sudo password
+1. Gain sudo access
+1. Reset your sudo password
 
 
 ### Generate an SSH key
@@ -73,13 +73,13 @@ Using our server example:
 ssh -i test_rsa rc-user@107.170.140.205
 {% endhighlight %}
 
-### Sudo access
+### Gain sudo access
 In order to gain root access you'll be required to provide the sudo password you were emailed when your server was setup.
 {% highlight bash %}
 $ sudo su
 {% endhighlight %}
 
-### Resetting your sudo password
+### Reset your sudo password
 If you lost the email, you can reset your rc-user password from the password page.
 
 ![Password Reset Page](/assets/password.png)
