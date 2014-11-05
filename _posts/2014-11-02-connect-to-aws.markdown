@@ -6,9 +6,9 @@ position: 15
 categories: walkthrough
 summary: Step by step guide for connecting your rapidcloud.io account to your AWS account.
 ---
-In order for rapidcloud.io to provision instances for you at Amazon Web Services (AWS), you need to generate an access key for us to use. You do this by navigating to the IAM page on AWS. 
+In order for rapidcloud.io to provision instances for you at Amazon Web Services (AWS), you need to generate an access key for us to use. In this guide we'll walk you through the process of generating an IAM access key step by step.
 
-You can access it from Services > Deployment & Management > IAM on the AWS navigation bar.
+Start by navigating to the IAM page on AWS. You can access it from Services > Deployment & Management > IAM on the AWS navigation bar.
 ![AWS Navigation](/assets/get_key_aws_nav.png)
 
 Once on the IAM page, create a new user, and specify a username you'll recognize (ex: rc-service-user )
